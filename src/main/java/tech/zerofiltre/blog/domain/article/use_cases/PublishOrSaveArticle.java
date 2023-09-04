@@ -63,6 +63,9 @@ public class PublishOrSaveArticle {
             existingArticle.setLastPublishedAt(now);
         }
 
+        UserActionEvent  userActionEvent = new  UserActionEvent(appUrl, Locale.forLanguageTag(author.getLanguage()), author, "", existingArticle, Action.ARTICLE_SUBMITTED);
+        notificationProvider.notify(userActionEvent);
+
         return articleProvider.save(existingArticle);
     }
 
