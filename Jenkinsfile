@@ -5,7 +5,7 @@ pipeline {
             args '-v /root/.m2:/root/.m2'
         }
     }
-    
+
     stages {
         stage('Test') {
             steps {
@@ -14,6 +14,22 @@ pipeline {
             post {
                 always {
                     junit 'target/surefire-reports/*.xml'
+                }
+            }
+        }
+
+        stage('SonarQube analysis') {
+            steps {
+                withSonarQubeEnv('SonarQubeServer') {
+                    sh 'mvn sonar:sonar -s .m2/settings.xml'
+                }
+            }
+        }
+
+        stage('Quality Gate') {
+            steps {
+                timeout(time: 2, unit: 'MINUTES') {
+                    waitForQualityGate abortPipeline: true
                 }
             }
         }
