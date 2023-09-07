@@ -47,7 +47,7 @@ pipeline {
                     }
 
                     // Déployez le projet (toujours)
-                    sh 'mvn deploy -DskipTests .m2/settings.xml'
+                    sh 'mvn deploy -DskipTests -s .m2/settings.xml'
 
                     // Archivez les artefacts déployés
                     archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
