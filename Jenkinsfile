@@ -34,26 +34,5 @@ pipeline {
             }
         }
 
-        /*stage('Package and Deploy') {
-            steps {
-                script {
-                    // Vérifiez si le nom de la branche commence par 'release-'
-                    if (env.BRANCH_NAME.startsWith('release-')) {
-                        // Extrait la version du nom de la branche
-                        String version = env.BRANCH_NAME.replaceAll(/^release-/, '')
-
-                        // Définit la version du projet en utilisant Maven
-                        sh "mvn versions:set -DnewVersion=${version}"
-                    }
-
-                    // Déployez le projet (toujours)
-                    sh 'mvn deploy -DskipTests .m2/settings.xml'
-
-                    // Archivez les artefacts déployés
-                    archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
-                }
-            }
-        }*/
-
     }
 }
