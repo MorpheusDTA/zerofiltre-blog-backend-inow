@@ -34,7 +34,7 @@ pipeline {
             }
         }
 
-        stage('Package and Deploy') {
+        /*stage('Package and Deploy') {
             steps {
                 script {
                     // Vérifiez si le nom de la branche commence par 'release-'
@@ -53,7 +53,7 @@ pipeline {
                     archiveArtifacts artifacts: '**/target/*.jar', allowEmptyArchive: true
                 }
             }
-        }
+        }*/
 
     }
 }
