@@ -233,13 +233,13 @@
     <distributionManagement>
         <snapshotRepository>
             <id>snapshots</id>
-            <name>a0ufk52h2bit9-artifactory-primary-0-snapshots</name>
-            <url>https://zerofiltre.jfrog.io/artifactory/libs-snapshot</url>
+            <name>a0kfc8lzlgf6o-artifactory-primary-0-snapshots</name>
+            <url>https://harfang.jfrog.io/artifactory/hfg-libs-snapshot</url>
         </snapshotRepository>
         <repository>
             <id>central</id>
-            <name>a0ufk52h2bit9-artifactory-primary-0-releases</name>
-            <url>https://zerofiltre.jfrog.io/artifactory/libs-release</url>
+            <name>a0kfc8lzlgf6o-artifactory-primary-0-releases</name>
+            <url>https://harfang.jfrog.io/artifactory/hfg-libs-release</url>
         </repository>
     </distributionManagement>
 
